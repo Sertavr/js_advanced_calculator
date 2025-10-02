@@ -8,7 +8,7 @@ function makeCalculator() {
     result: 0,
 
     operate(fun, num) {
-      this.result = fun.call(this, num);
+      fun.call(this, num);
 
       return this;
     },
@@ -18,16 +18,16 @@ function makeCalculator() {
       return this;
     },
     add(num) {
-      return this.result + num;
+      this.result += num;
     },
     subtract(num) {
-      return this.result - num;
+      this.result -= num;
     },
     multiply(num) {
-      return this.result * num;
+      this.result *= num;
     },
     divide(num) {
-      return this.result / num;
+      this.result /= num;
     },
   };
 }
